@@ -1,0 +1,61 @@
+/* ref: https://juejin.im/post/5e947b8f6fb9a03c957ffd1a */
+
+.thumbs-up-bubble {
+  position: relative;
+  width: 100px;
+  height: 200px;
+  background-color: #eee;
+}
+
+.bubble {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+}
+
+.bubble img {
+  width: 32px;
+  height: 32px;
+}
+
+.animation-bubble {
+  animation: bubble_y 2s linear 1 forwards, bubble_scale linear 1s 1 forwards, bubble_offset 2s linear 1 forwards;
+}
+
+@keyframes bubble_y {
+  0% {
+    margin-bottom: 0;
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    margin-bottom: 200px;
+    opacity: 0;
+  }
+}
+
+@keyframes bubble_scale {
+  0% {
+    transform: scale(.3);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes bubble_offset {
+  0% {
+    transform: translateX(8px);
+  }
+  25% {
+    transform: translateX(-8px);
+  }
+  50% {
+    transform: translateX(15px);
+  }
+  75% {
+    transform: translateX(-15px);
+  }
+}
